@@ -1,17 +1,19 @@
 import React from "react";
-
+import { BrowserRouter as Router, Link } from "react-router-dom";
 const Header = () => {
   return (
     <div>
       <header id="header">
         <div className="inner">
-          <a href="index.html" className="logo">
-           <img className="w-20" src="images/logo1.png" alt=""/>
-          </a>
+          <Link to="/" className="logo">
+            <img className="w-20" src="images/logo1.png" alt="" />
+          </Link>
           <nav id="nav">
-            <a href="index.html">Home</a>
-            <a href="generic.html">Generic</a>
-            <a href="elements.html">Elements</a>
+            <Link to="/">Home</Link>
+            <Link to="/list">Product</Link>
+            <Link to="/News">News</Link>
+            <Link to="/About">About</Link>
+            <Link to="/Contact">Contact</Link>
           </nav>
           <a href="#navPanel" className="navPanelToggle">
             <span className="fa fa-bars" />
