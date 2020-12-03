@@ -12,6 +12,9 @@ import Home from "./Components/Home";
 import News from "./Components/News";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Detail from "./Components/Detail";
+import DetailPost from "./Components/DetailPost";
+import Category from "./Components/Categories";
+import CateDetail from "./Components/CategoriesDetail";
 
 function App() {
     const [products, setProducts] = useState([]);
@@ -82,14 +85,23 @@ function App() {
                 <Route path="/AddProduct">
                     <AddProduct add={onAddPost} />
                 </Route>
-                <Route exact path="/list">
+                <Route exact path="/products">
                     <Products pro={products} deleteProduct={onDeleteProduct} />
                 </Route>
-                <Route exact path="/products/detail/:id">
+                <Route exact path="/products/:id">
                     <Detail />
                 </Route>
                 <Route path="/News">
                     <News />
+                </Route>
+                <Route exact path="/posts/:id">
+                    <DetailPost />
+                </Route>
+                <Route exact path="/category">
+                  <Category/>
+                </Route>
+                <Route exact path="/category/:id">
+                  <CateDetail/>
                 </Route>
             </Switch>
             {/* <Products pro={products} deleteProduct={onDeleteProduct} /> */}

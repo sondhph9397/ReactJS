@@ -11,26 +11,35 @@ const Detail = () => {
             .then((data) => {
                 setDetail(data);
             })
-            .catch((err) => {
-                console.log("eerrr");
-            });
     }, []);
 
     return (
-        <div className="detail-product">
-            <div className="container mx-auto py-20">
-                <div className="grid grid-cols-2">
-                    <div className="grid grid-cols-2">
-                        <img src={detail.image ? `http://localhost:1337${detail.image.map((item) => {return item.url;})}`: "null"}/> 
-                        <br/>
-                        <div className="">
-                            <p className="">{detail.name}</p>
-                            <p className="">{detail.description}</p>
-                        </div>
+        <div id="main">
+        <div class="bg-white shadow overflow-hidden py-10">
+            <div class="w-4/6 mx-auto grid grid-cols-2 gap-5">
+                <div class="">
+                    
+                    <div className="mx-auto">
+                    <img className="w-96 h-64 object-cover" src={detail.image ? `http://localhost:1337${detail.image.map((item) => {return item.url;})}`: "null"}/>
                     </div>
+                </div>
+                <div class="border-t border-gray-200">
+                    <h3 class="text-3xl leading-6 font-medium text-blue-700 ml-14">
+                        {detail.name}
+                    </h3>
+                    <dl>
+                        <div class="bg-gray-50 grid grid-cols-1 gap-4 my-4">
+                            <dt class="text-sm font-medium text-text-gray-900">
+                                {detail.description}
+                            </dt>
+                        </div>
+                        <p className="text-red-700 text-3xl">{detail.price}$</p>
+                        <button className="button mt-8">ADD TO CART</button>
+                    </dl>
                 </div>
             </div>
         </div>
+    </div>
     );
 };
 

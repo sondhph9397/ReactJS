@@ -6,7 +6,7 @@ const Bannerr = () => {
             <section id="four" className="wrapper style3">
                 <div className="inner">
                     <header className="align-center">
-                        <h2>Morbi interdum mollis sapien</h2>
+                        <h2 className="text-white">Morbi interdum mollis sapien</h2>
                         <p>
                             Cras aliquet urna ut sapien tincidunt, quis
                             malesuada elit facilisis. Vestibulum sit amet tortor
