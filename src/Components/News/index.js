@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 function News() {
-    const [category, setCategory] = useState([]);
-    const API_CATEGORY = "http://localhost:1337/categories";
+    const [cate_posts, setCategory] = useState([]);
+    const API_CATEGORY = "http://localhost:1337/category-posts";
     // const detailPost = (id) => {
     //     console.log(id);
     // };
@@ -12,10 +12,13 @@ function News() {
             .then((data) => setCategory(data));
     }, []);
     return (
-        <div className="bg-gray-300 py-8">
-            {category.map((cate, index) => ( 
+        <div className="bg-gray-300 py-8 align-center">
+             <h1 className="text-5xl pb-6">
+                           News
+                        </h1>
+            {cate_posts.map((cate, index) => ( 
                     <section key={index} className="inner">
-                        <h1 className="text-5xl py-5">{cate.title}</h1>
+                        <h1 className="text-2xl font-bold text-yellow-900 py-5 align-left">{cate.title}</h1>
                         <article className="grid grid-cols-4 gap-10 align-center"> 
                          {cate.posts.map((item) => (
                                     <div className="mx-auto">
@@ -26,7 +29,6 @@ function News() {
                                     </div> 
                                     ))}
                         </article>
-                    
                     </section>
             ))}
         </div>

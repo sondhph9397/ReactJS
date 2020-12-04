@@ -18,45 +18,29 @@ const Products = ({ pro, deleteProduct }) => {
             <section id="three" className="py-12 align-center bg-gray-400">
                 <div className="inner">
                     <header>
-                        <h1 className="text-5xl text-left pb-6">
-                            Product{" "}
-                            {/* <span className="text-xl text-white text-right">
-                                <Link to="/addproduct">Them</Link>
-                            </span> */}
-                        </h1>
+                        <Link to="/category"><h1 className="text-5xl pb-6">
+                            Product
+                        </h1></Link>
+                        
                     </header>
-                    <div className="grid grid-cols-4 gap-20">
-                        {pro.map((pro, index) => (
-                            <article key={index}>
-                                <div className="image round w-64 h-64">
-                                    <div className="img-custom">
-                                        <img
-                                            src={
-                                                pro.image
-                                                    ? `http://localhost:1337${pro.image.map(
-                                                          (item) => {
-                                                              return item.url;
-                                                          }
-                                                      )}`
-                                                    : "null"
-                                            }
-                                            alt="Pic 01"
-                                        />
-                                    </div>
-                                </div>
-                                <header className="my-2 text-xl font-bold">
-                                    <Link to={`/products/${pro.id}`}>
-                                        <h3
-                                            className="hover:text-red-800"
-                                            onClick={() => detailPro(pro.id)}
-                                        >
-                                            {pro.name}
-                                        </h3>
-                                    </Link>
-                                </header>
-                                <p>{pro.price}$</p>
-                            </article>
-                        ))}
+                    <div>
+                    {category.map((cate, index) => ( 
+                    <section key={index} className="inner">
+                        <h1 className="text-2xl font-bold text-yellow-900 py-5 align-left">{cate.title}</h1>
+                        <article className="grid grid-cols-4 gap-10 align-center"> 
+                         {cate.products.map((item) => (
+                                    <div className="mx-auto">
+                                        <div>
+                                            <img className="h-64 w-64 object-cover" src={item.image ? `http://localhost:1337${item.image.map((item) => {return item.url;})}`: "null"} alt="Pic 01" />
+                                        </div>
+                                      <Link to={`/${cate.title}/${item.name}/${item.id}`}><h1 className="text-xl hover:text-red-700 pt-5 font-bold">{item.name}</h1></Link>  
+                                    </div> 
+                                    
+                                    ))}
+                                    
+                        </article>
+                    </section>
+            ))}
                     </div>
                 </div>
             </section>

@@ -6,10 +6,12 @@ import Header from "../Header";
 import Products from "../Products";
 import Bannerr from "../Banner-n";
 import News from "../News";
+import Category from "../Categories";
 function Home({ pro, deleteProduct }) {
   return (
     <>
-      <Products pro={pro} deleteProduct={deleteProduct} />
+      {/* <Products pro={pro} deleteProduct={deleteProduct} /> */}
+      <Category/>
       <Bannerr/>
       <News/>
       <Contact/>

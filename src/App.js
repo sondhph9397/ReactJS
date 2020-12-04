@@ -88,7 +88,7 @@ function App() {
                 <Route exact path="/products">
                     <Products pro={products} deleteProduct={onDeleteProduct} />
                 </Route>
-                <Route exact path="/products/:id">
+                <Route exact path="/:title/:name/:id">
                     <Detail />
                 </Route>
                 <Route path="/News">
@@ -100,7 +100,7 @@ function App() {
                 <Route exact path="/category">
                   <Category/>
                 </Route>
-                <Route exact path="/category/:id">
+                <Route exact path="/:title/:id">
                   <CateDetail/>
                 </Route>
             </Switch>

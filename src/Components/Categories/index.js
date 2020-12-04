@@ -16,6 +16,11 @@ function Category() {
         <div>
             <section id="three" className="py-12 align-center bg-gray-400">
                 <div className="inner">
+                <header>
+                      <h1 className="text-5xl pb-6">
+                            Product
+                        </h1>
+                    </header>
                     <div className="grid grid-cols-4 gap-20">
                         {category.map((cate, index) => (
                             <article key={index}>
@@ -27,7 +32,7 @@ function Category() {
                                     </div>
                                 </div>
                                 <header className="my-2 text-xl font-bold">
-                                    <Link to={`/category/${cate.id}`}>
+                                    <Link to={`/${cate.title}/${cate.id}`}>
                                         <h3
                                             className="hover:text-red-800" onClick={() => detailPro(cate.id)}>{cate.title}
                                         </h3>
