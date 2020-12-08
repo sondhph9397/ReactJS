@@ -7,13 +7,14 @@ import Products from "../Products";
 import Bannerr from "../Banner-n";
 import News from "../News";
 import Category from "../Categories";
+import CategoryNew from "../CategoryNew";
 function Home({ pro, deleteProduct }) {
   return (
     <>
       {/* <Products pro={pro} deleteProduct={deleteProduct} /> */}
       <Category/>
       <Bannerr/>
-      <News/>
+      <CategoryNew/>
       <Contact/>
     </>
   );

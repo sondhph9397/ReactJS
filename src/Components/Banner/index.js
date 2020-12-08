@@ -1,10 +1,14 @@
 import React from "react";
-
+import { BrowserRouter as Router, Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div>
       <section id="banner">
-        <div className="inner">
+       <div className="login absolute top-0 right-0 pr-40">
+          <Link to="/Login">Login</Link> 
+        </div>
+        <div className="inner">  
+       
           <header>
             <h1>Welcome to BeerPub</h1>
           </header>

@@ -15,6 +15,9 @@ import Detail from "./Components/Detail";
 import DetailPost from "./Components/DetailPost";
 import Category from "./Components/Categories";
 import CateDetail from "./Components/CategoriesDetail";
+import Login from "./Components/Login/login";
+import CateDetailNew from "./Components/CateDetailNew";
+import All from "./Components/Allproduct";
 
 function App() {
     const [products, setProducts] = useState([]);
@@ -67,45 +70,65 @@ function App() {
             .then(() => swal("Bạn đã thêm thành công"));
         setProducts([...products, product]);
     };
-
     return (
         <Router>
-            <Header />
-            <Banner />
             <Switch>
-                <Route exact path="/">
-                    <Home pro={products} deleteProduct={onDeleteProduct} />
+                <Route exact path="/login">
+                    <Login />
                 </Route>
-                <Route path="/About">
-                    <About />
+                <Route exact path="/all">
+                    <All/>
                 </Route>
-                <Route path="/Contact">
-                    <Contact />
-                </Route>
-                <Route path="/AddProduct">
-                    <AddProduct add={onAddPost} />
-                </Route>
-                <Route exact path="/products">
-                    <Products pro={products} deleteProduct={onDeleteProduct} />
-                </Route>
-                <Route exact path="/:title/:name/:id">
-                    <Detail />
-                </Route>
-                <Route path="/News">
-                    <News />
-                </Route>
-                <Route exact path="/posts/:id">
-                    <DetailPost />
-                </Route>
-                <Route exact path="/category">
-                  <Category/>
-                </Route>
-                <Route exact path="/:title/:id">
-                  <CateDetail/>
-                </Route>
+                <>
+                    <Header />
+                    <Banner />
+                    <Switch>
+                        <Route exact path="/">
+                            <Home
+                                pro={products}
+                                deleteProduct={onDeleteProduct}
+                            />
+                        </Route>
+                        <Route path="/About">
+                            <About />
+                        </Route>
+                        <Route path="/Contact">
+                            <Contact />
+                        </Route>
+                        <Route path="/AddProduct">
+                            <AddProduct add={onAddPost} />
+                        </Route>
+                        <Route exact path="/products">
+                            <Products
+                                pro={products}
+                                deleteProduct={onDeleteProduct}
+                            />
+                        </Route>
+                        <Route exact path="/:title/:name/:id">
+                            <Detail />
+                        </Route>
+                        <Route path="/News">
+                            <News />
+                        </Route>
+                        <Route exact path="/posts/:id">
+                            <DetailPost />
+                        </Route>
+                        <Route exact path="/category">
+                            <Category />
+                        </Route>
+                        <Route exact path="/:title/:id">
+                            <CateDetail />
+                        </Route>
+                       {/* <Route path="/:detail/:id">
+                           <CateDetailNew/>
+                       </Route> */}
+                        {/* <Route exact path="/:title/:name/:id">
+                            <DetailPost />
+                        </Route> */}
+                    </Switch>
+                    <Footer />
+                </>
             </Switch>
-            {/* <Products pro={products} deleteProduct={onDeleteProduct} /> */}
-            <Footer />
         </Router>
     );
 }

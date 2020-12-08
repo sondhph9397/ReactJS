@@ -3,9 +3,6 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 function News() {
     const [cate_posts, setCategory] = useState([]);
     const API_CATEGORY = "http://localhost:1337/category-posts";
-    // const detailPost = (id) => {
-    //     console.log(id);
-    // };
     useEffect(() => {
         fetch(API_CATEGORY)
             .then((response) => response.json())
