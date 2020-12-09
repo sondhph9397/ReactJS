@@ -12,9 +12,6 @@ function Pagination({ page, onPageChange, totalProduct, limit }) {
             >
                 <img src="../images/prev.png" alt="" className="h-3 " />
             </button>
-            <button className="border px-4 py-2" >1</button>
-            <button className="border px-4 py-2 mx-10">2</button>
-            <button className="border px-4 py-2 mr-10">3</button>
             <button
                 className="border px-4 py-3"
                 disabled={page >= totalPages}

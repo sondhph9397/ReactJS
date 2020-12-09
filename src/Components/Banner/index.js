@@ -4,9 +4,9 @@ const Banner = () => {
   return (
     <div>
       <section id="banner">
-       <div className="login absolute top-0 right-0 pr-40">
+       {/* <div className="login absolute top-0 right-0 pr-40">
           <Link to="/Login">Login</Link> 
-        </div>
+        </div> */}
         <div className="inner">  
        
           <header>
