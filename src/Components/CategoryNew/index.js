@@ -32,7 +32,7 @@ function CategoryNew() {
                                     </div>
                                 </div>
                                 <header className="my-2 text-xl font-bold">
-                                    <Link to={`/${cate.title}/${cate.id}`}>
+                                    <Link to={`/${cate.id}`}>
                                         <h3
                                             className="hover:text-red-800" onClick={() => detail(cate.id)}>{cate.title}
                                         </h3>

@@ -110,21 +110,21 @@ function App() {
                         <Route path="/News">
                             <News />
                         </Route>
-                        <Route exact path="/posts/:id">
+                        {/* <Route exact path="/posts/:id">
                             <DetailPost />
-                        </Route>
+                        </Route> */}
                         <Route exact path="/category">
                             <Category />
                         </Route>
                         <Route exact path="/:title/:id">
                             <CateDetail />
                         </Route>
-                       {/* <Route path="/:detail/:id">
+                       <Route exact path="/:id">
                            <CateDetailNew/>
-                       </Route> */}
-                        {/* <Route exact path="/:title/:name/:id">
+                       </Route>
+                        <Route exact path="/detail/:detail/:posts/:id">
                             <DetailPost />
-                        </Route> */}
+                        </Route>
                     </Switch>
                     <Footer />
                 </>

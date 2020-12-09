@@ -21,7 +21,7 @@ function CateDetailNew() {
                               <div>
                                   <img className="h-64 w-64 object-cover"src={item.image ? `http://localhost:1337${item.image.map((item) => {return item.url;})}`: "null"} alt="Pic 01"/>
                               </div>
-                              <Link to={`/${category.title}/${item.title}/${item.id}`}>
+                              <Link to={`/detail/${category.title}/${item.title}/${item.id}`}>
                                   <h1 className="text-xl hover:text-red-700 pt-5 font-bold">
                                       {item.title}
                                   </h1>
