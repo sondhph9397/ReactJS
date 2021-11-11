@@ -10,15 +10,12 @@ const Products = ({ pro, deleteProduct }) => {
             .then((response) => response.json())
             .then((data) => setCategory(data));
     }, []);
-    const detailPro = (id) => {
-        console.log(id);
-    };
     return (
         <div>
             <section id="three" className="py-12 align-center bg-gray-400">
                 <div className="inner">
                     <header>
-                        <Link to="/category"><h1 className="text-5xl pb-6">
+                        <Link to="/category"><h1 className="text-5xl font-semibold pb-6">
                             Product
                         </h1></Link>
                         

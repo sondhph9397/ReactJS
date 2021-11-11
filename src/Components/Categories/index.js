@@ -20,7 +20,6 @@ function Category() {
 
     useEffect(() => {
         const URL_PRODUCT = `http://localhost:1337/categories?_start=${filter.start}&_limit=${filter.limit}`;
-
         function fetchData() {
             fetch(URL_PRODUCT)
                 .then(response => response.json())
@@ -48,10 +47,10 @@ function Category() {
         })
     }
 
-    const detailPro = (id) => {
-        console.log(id);
-    };
-
+    // const detailPro = (id) => {
+    //     console.log(id);
+    // };
+    // onClick={() => detailPro(cate.id)}
     return (
         <div>
             <section id="three" className="py-12 align-center bg-gray-400">
@@ -61,7 +60,7 @@ function Category() {
                             Product
                         </h1>
                     </header>
-                    <div className="grid grid-cols-4 gap-20">
+                    <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-20">
                         {list.map((cate, index) => (
                             <article key={index}>
                                 <div className="image round w-64 h-64">
@@ -74,7 +73,7 @@ function Category() {
                                 <header className="my-2 text-xl font-bold">
                                     <Link to={`/${cate.title}/${cate.id}`}>
                                         <h3
-                                            className="hover:text-red-800" onClick={() => detailPro(cate.id)}>{cate.title}
+                                            className="hover:text-red-800">{cate.title}
                                         </h3>
                                     </Link>
                                 </header>

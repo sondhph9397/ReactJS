@@ -21,7 +21,7 @@ function CategoryNew() {
                             News
                         </h1>
                     </header>
-                    <div className="grid grid-cols-4 gap-20">
+                    <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-20">
                         {category.map((cate, index) => (
                             <article key={index}>
                                 <div className="image round w-64 h-64">

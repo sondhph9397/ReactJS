@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+// nhận vào các tham số muốn sử dụng lại nó
 import { useParams } from "react-router-dom";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 function CateDetail() {
@@ -6,6 +7,7 @@ function CateDetail() {
     let { id } = useParams();
     const [category, setCategory] = useState([]);
     const API_CATEGORY = `http://localhost:1337/categories/${id}`;
+    // sử dụng state và các tính năng khác của React mà không cần viết dạng class
     useEffect(() => {
         fetch(API_CATEGORY)
             .then((response) => response.json())
